@@ -151,6 +151,9 @@ $(document).ready(function() {
     var sectionId = $(this).data('section');
     $('.section').removeClass('active');
     $('#' + sectionId).addClass('active');
+
+    $('.nav-link').removeClass('active-nav');
+    $(this).addClass('active-nav');
   });
 
   $('.nav-main').click(function() {
