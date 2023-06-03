@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>202212693 이재혁 과제</title>
+<meta name="viewport" content="user-scalable=yes, initial-scale=1">
+<style>
+body{overflow-y: scroll;}
+.its_me {
+  position: relative;
+  left: 5%;
+}
+.mainintro {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 15%;
+  left: 5%;
+}
+.mainintro > .intro {
+  margin-left: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  margin: 5%;
+  padding: 5%;
+  line-height: 1.2;
+}
+p {
+  position: relative;
+  left: 5%;
+}
+
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+
+.main-nav ul { 
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  right: 5%; 
+}
+.main-nav li {
+  list-style: none;
+  padding: 0 10px;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+nav ul li:hover {
+  text-decoration: underline; color: red;
+}
+
+.sub-nav {
+  display: inline;
+  position: relative;
+  margin-top: 50px;
+  margin-left: 0; padding-left: 0;
+}
+.sub-nav ul {
+  display: flex;
+  list-style: none;
+  padding:0px;
+}
+.sub-nav li {
+  left: 5%;
+  padding: 3px 10px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid black;
+}
+.sub-nav li:first-child{border-radius: 5px 0 0 5px;}
+.sub-nav li:last-child{border-radius: 0 5px 5px 0}
+.sub-nav li:hover {
+  text-decoration: underline; color: red;
+}
+.active-nav {
+  color: red;
+}
+
+#computer{text-decoration: none; color: orange; font-size: small;
+  position: absolute; right: 10%;}
+header {position: relative; top: 0%;}
+
+.year{color: gray;}
+.story{font-size: small}
+#school{text-decoration: none; color: orange;  position: relative; left: 5%; 
+  font-size: small;}
+.item{font-weight: 700; color: red;}
+.footer{
+  position: fixed;
+  text-align: center;
+  bottom: 0%;
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+}
+
+@media (max-width: 800px) {
+  * {margin: 0; padding: 0;}
+  p {margin-bottom: 10px; margin-top: 10px;}
+
+  .main-nav {
+  position: relative; top: 5px;
+  padding: 3%; font-size: medium;
+  }
+  .its_me {font-size: large;}
+  .main-nav ul {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  right: 5%;
+  }
+  .mainintro {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 13% 0 0; 
+  }
+  .mainintro > img {
+    margin: 0 auto;
+    width: 90%;
+  }
+  .mainintro > .intro {
+    margin-top: 20px;
+    text-align: center;
+    width: 90%;
+  }
+  sub-nav ul, hr {
+    margin-bottom: 10px; margin-top: 10px;
+  }
+  .school, .story {
+  margin-bottom: 10px; margin-top: 10px;
+  }
+  .foottext{ font-size: small; white-space: normal; text-align: center; width: 90%;}
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('.nav-link').click(function() {
+    var sectionId = $(this).data('section');
+    $('.section').removeClass('active');
+    $('#' + sectionId).addClass('active');
+  });
+
+  $('.nav-main').click(function() {
+    var sectionId = $(this).data('section');
+    $('.section').removeClass('active');
+    $('#' + sectionId).addClass('active');
+
+    $('.nav-main').removeClass('active-nav');
+    $(this).addClass('active-nav');
+  });
+});
+</script>
+</head>
+<body>
+  <header>
+    <div class="main-nav">
+    <nav>
+      <ul>
+        <b><li class="nav-main" data-section="home">소개</li></b>
+        <b><li class="nav-main" data-section="else">그 외</li></b>
+      </ul>
+    </nav>
+    </div>
+    <h2 class="its_me">202212693 이재혁</h2>
+  </header>
+
+<section id="home" class="section active">
+  <div class="mainintro">
+    <img src="https://lh3.googleusercontent.com/pw/AJFCJaUYj2A3nYkj2n0_eOd9sOpZxxH4vaLc6KFL_jiSZY_I-l3H_Bh7IYqsp0KN7_QSleLWjSJB9JKuO58Ugl1ybJF4Fa2Rz_HB80WZNIwwwH3Y7ov3adu_VkE3EKAXKV7lZ2MUb15jh8_FOhSL5orme7tj=w1479-h832-s-no?authuser=0" width="400" class="its_me">
+    <p class="intro">안녕하세요. 강원대학교에 재학 중인 22학번 이재혁이라고 합니다. 현재 
+    컴퓨터공학과에 재학 중이며, 왼쪽의 사진은 과잠을 입고 찍은 사진입니다.
+    2022년에 입학해 1학년을 마치고, 현재 2학년 1학기의 마지막을 향해 달려나가고 있습니다.<br>
+    현재 소속된 동아리는 없습니다. 1학년에는 생활관에 있었고, 현재는 원룸에서 
+    살고 있습니다.
+    <br><br><br><a href="https://cse.kangwon.ac.kr/cse/index.do" id="computer">강원대 컴공 홈페이지</a></p>
+  </div>
+</section>
+
+<section id="else" class="section">
+  <div class="sub-nav">
+    <br><p class="item">항목</p>
+    <ul>
+      <li class="nav-link" data-section="else">전체</li>
+      <li class="nav-link" data-section="life">활동</li>
+      <li class="nav-link" data-section="other">기타</li>
+    </ul>
+  </div>
+  <hr>
+  <p class="year">2023</p>
+  <p class="story">강원대학교 컴퓨터공학과 재학 중</p>
+  <p class="year">2022</p>
+  <p class="story">자동차 2종 면허증 취득</p>
+  <a href="https://wwwk.kangwon.ac.kr/www/index.do" id="school">강원대학교 입학</a>
+  <p class="story">신송고등학교 졸업</p>
+  <p class="year">2019</p>
+  <a href="http://shinsong-h.icehs.kr/main.do" id="school">신송고등학교 입학</a>
+  <p class="story">인천신정중학교 졸업</p>
+  <p class="year">2017</p>
+  <p class="story">태권도 3품 취득</p>
+  <p class="year">2016</p>
+  <a href="http://ishinjeong.icems.kr/main.do" id="school">인천신정중학교 입학</a>
+  <p class="story">인천명선초학교 졸업</p>
+  <p class="year">2014</p>
+  <a href="http://ims.icees.kr/main.do#closeWinDay" id="school">인천명선초등학교 전학</a>
+  <p class="year">2011</p>
+  <a href="http://dangha.icees.kr/main.do" id="school">당하초등학교 입학</a>
+  <p class="story">한국으로 귀국</p>
+  <p class="year">2009</p>
+  <a href="https://www.glenps.vic.edu.au/" id="school">Glen Waverley Primary School 입학</a>
+  <p class="year">2006</p>
+  <p class="story">호주로 이사</p>
+  <p class="year">2003</p>
+  <p class="story">6월 21일 출생</p>
+  <br>
+  <p class="year">이메일 계정</p>
+  <a href="https://mail.google.com/mail/u/0/?pli=1#inbox" id="school">dinojh3@gmail.com</a>
+  <p class="year">가족 관계</p>
+  <p class="story">아빠 엄마 큰 누나 작은 누나</p>
+  <p></p><br><p></p><br>
+</section>
+<section id="life" class="section">
+  <div class="sub-nav">
+    <br><p class="item">항목</p>
+    <ul>
+      <li class="nav-link" data-section="else">전체</li>
+      <li class="nav-link" data-section="life">활동</li>
+      <li class="nav-link" data-section="other">기타</li>
+    </ul>
+  </div>
+  <hr>
+  <p class="year">2023</p>
+  <p class="story">강원대학교 컴퓨터공학과 재학 중</p>
+  <p class="year">2022</p>
+  <p class="story">자동차 2종 면허증 취득</p>
+  <a href="https://wwwk.kangwon.ac.kr/www/index.do" id="school">강원대학교 입학</a>
+  <p class="story">신송고등학교 졸업</p>
+  <p class="year">2019</p>
+  <a href="http://shinsong-h.icehs.kr/main.do" id="school">신송고등학교 입학</a>
+  <p class="story">인천신정중학교 졸업</p>
+  <p class="year">2017</p>
+  <p class="story">태권도 3품 취득</p>
+  <p class="year">2016</p>
+  <a href="http://ishinjeong.icems.kr/main.do" id="school">인천신정중학교 입학</a>
+  <p class="story">인천명선초학교 졸업</p>
+  <p class="year">2014</p>
+  <a href="http://ims.icees.kr/main.do#closeWinDay" id="school">인천명선초등학교 전학</a>
+  <p class="year">2011</p>
+  <a href="http://dangha.icees.kr/main.do" id="school">당하초등학교 입학</a>
+  <p class="story">한국으로 귀국</p>
+  <p class="year">2009</p>
+  <a href="https://www.glenps.vic.edu.au/" id="school">Glen Waverley Primary School 입학</a>
+  <p class="year">2006</p>
+  <p class="story">호주로 이사</p>
+  <p class="year">2003</p>
+  <p class="story">6월 21일 출생</p>
+  <p></p><br><p></p><br>
+</section>
+
+<section id="other" class="section">
+  <div class="sub-nav">
+    <br><p class="item">항목</p>
+    <ul>
+      <li class="nav-link" data-section="else">전체</li>
+      <li class="nav-link" data-section="life">활동</li>
+      <li class="nav-link" data-section="other">기타</li>
+    </ul>
+  </div>
+  <hr>
+  <p class="year">이메일 계정</p>
+  <a href="https://mail.google.com/mail/u/0/?pli=1#inbox" id="school">dinojh3@gmail.com</a>
+  <p class="year">가족 관계</p>
+  <p class="story">아빠 엄마 큰 누나 작은 누나</p>
+</section>
+<footer class="footer">
+  <p class="foottext">Copyright @ 2023. Lee JaeHyeok All rights reserved.</p>
+</footer>
+</body>
+</html>
